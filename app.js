@@ -10,6 +10,23 @@ Ext.define('My.computer.NoteBook', {
 		this.initConfig(config);
 		return this;
 	}
+	
+	,expensive:false
+
+	// called by setPrice
+	,applyPrice:function(price) {
+		price = price || 0;
+		price = parseFloat(price, 10);
+		this.expensive = price > 1000;
+		console.log(
+			  'Price = ' 
+			+ price 
+			+ ', expensive = ' 
+			+ this.expensive
+		);
+		return price;
+	}
+
 });
 
 // creates instance of My.computer.NoteBook Class

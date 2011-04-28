@@ -26,6 +26,14 @@ Ext.define('My.computer.NoteBook', {
 		);
 		return price;
 	}
+	
+	// called by setOs
+	,applyOs:function(os) {
+		if(!(/^(Linux|Mac|Win)/).test(os)) {
+			return 'Other'
+		}
+		return os;
+	}
 
 });
 

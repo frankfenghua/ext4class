@@ -7,6 +7,11 @@ Ext.Loader.setConfig({
 	}
 });
 
+// Require these classes
+Ext.require([
+	 'Ext.form.field.Text'
+]);
+
 // define our panel
 Ext.define('My.panel.Panel', {
 	 extend:'Ext.panel.Panel'
@@ -31,7 +36,7 @@ Ext.onReady(function(){
 		 ,id:'mypanel'
 		 ,style:'margin:20px'
 		 ,bodyStyle:'padding:10px'
-		 ,items:[Ext.create('Ext.form.field.Text',{
+		 ,items:[Ext.create('Ext.form.field.Text', {
 			 name:'mytextfield'
 			,fieldLabel:'Text Field'
 		 })]

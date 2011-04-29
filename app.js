@@ -30,6 +30,11 @@ Ext.onReady(function(){
 		  renderTo:Ext.getBody()
 		 ,id:'mypanel'
 		 ,style:'margin:20px'
+		 ,bodyStyle:'padding:10px'
+		 ,items:[Ext.create('Ext.form.field.Text',{
+			 name:'mytextfield'
+			,fieldLabel:'Text Field'
+		 })]
 	});
 });
 

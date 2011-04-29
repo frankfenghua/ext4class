@@ -11,18 +11,26 @@ Ext.Loader.setConfig({
 Ext.define('My.panel.Panel', {
 	 extend:'Ext.panel.Panel'
 	,config:{
-		 title:'My Panel'
-		,width:400
-		,height:300
+		myOption:'My Config Option'
+	}
+	,title:'My Panel'
+	,width:400
+	,height:300
+	
+	,constructor:function(config) {
+		this.applyConfig(this.config);
+		this.callParent(arguments);
+		return this;
 	}
 })
 
-// Inform user that we are OK and ready
+// main application entry point
 Ext.onReady(function(){
-	Ext.getBody().update('<h1>Application Ready</h1>');
+	var myPanel = Ext.create('My.panel.Panel', {
+		  renderTo:Ext.getBody()
+		 ,id:'mypanel'
+		 ,style:'margin:20px'
+	});
 });
 
 // eof
-
-
-
